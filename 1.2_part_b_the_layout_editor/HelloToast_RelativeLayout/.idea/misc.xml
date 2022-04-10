@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/1.2_part_b_the_layout_editor/HelloToast/app/src/main/res/layout-land/activity_main.xml" value="0.2625" />
+        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/1.2_part_b_the_layout_editor/HelloToast/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.13203125" />
+        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/1.2_part_b_the_layout_editor/HelloToast/app/src/main/res/layout/activity_main.xml" value="0.2640625" />
+        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/1.2_part_b_the_layout_editor/HelloToast_RelativeLayout/app/src/main/res/layout/activity_main.xml" value="0.21675929884566053" />
+        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/HelloToast/app/src/main/res/layout/activity_main.xml" value="0.2640625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
