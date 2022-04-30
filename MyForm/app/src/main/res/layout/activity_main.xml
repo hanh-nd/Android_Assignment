@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Student ID (*)" />
+
+            <EditText
+                android:id="@+id/student_id_et"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your studentID"
+                android:inputType="number" />
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name (*)" />
+
+            <EditText
+                android:id="@+id/student_name_et"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your name"
+                android:inputType="textPersonName" />
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Credential number (*)" />
+
+            <EditText
+                android:id="@+id/student_credential_number_et"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your credential number"
+                android:inputType="number" />
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone (*)" />
+
+            <EditText
+                android:id="@+id/student_number_et"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your number"
+                android:inputType="phone" />
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email (*)" />
+
+            <EditText
+                android:id="@+id/student_email_et"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your email"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Birthday" />
+
+            <EditText
+                android:id="@+id/student_dob_et"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="Enter your birthday"
+                android:inputType="datetime" />
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hometown" />
+
+            <EditText
+                android:id="@+id/student_hometown_et"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your hometown" />
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address" />
+
+            <EditText
+                android:id="@+id/student_address_et"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your current address"
+                android:inputType="text" />
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Major" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rbtn_it1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Khoa học máy tính" />
+                <RadioButton
+                    android:id="@+id/rbtn_it2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Kỹ thuật máy tính" />
+            </RadioGroup>
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Programming Language" />
+
+            <CheckBox
+                android:id="@+id/c_lang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C" />
+
+            <CheckBox
+                android:id="@+id/java_lang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Java" />
+
+            <CheckBox
+                android:id="@+id/python_lang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Python" />
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Do you agree?" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rbtn_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="No" />
+                <RadioButton
+                    android:id="@+id/rbtn_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/submit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:enabled="false"
+                android:text="Submit" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
