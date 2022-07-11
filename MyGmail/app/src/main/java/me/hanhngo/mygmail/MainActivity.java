@@ -1,6 +1,7 @@
 package me.hanhngo.mygmail;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
         setContentView(binding.getRoot());
-
+        Button
         EmailAdapter adapter = new EmailAdapter(getEmailList());
         binding.rcv.setAdapter(adapter);
     }

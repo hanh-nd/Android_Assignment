@@ -3,8 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/MyGmail/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/MyGmail/app/src/main/res/layout/email_item_row.xml" value="0.2640625" />
+        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/MyFileManager/app/src/main/res/layout/activity_main.xml" value="0.2640625" />
+        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/MyFileManager/app/src/main/res/layout/file_item_row.xml" value="0.2640625" />
       </map>
     </option>
   </component>

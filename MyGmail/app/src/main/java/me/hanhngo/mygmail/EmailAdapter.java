@@ -1,5 +1,6 @@
 package me.hanhngo.mygmail;
 
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -51,6 +52,7 @@ public class EmailAdapter extends RecyclerView.Adapter<EmailAdapter.EmailViewHol
 
         public void bind(Email email) {
             binding.nameTv.setText(email.getName());
+            binding.nameTv.setTextColor(Color.BLUE);
             binding.subjectTv.setText(email.getSubject());
             binding.bodyTv.setText(email.getBody());
             binding.timeTv.setText(email.getTime());
