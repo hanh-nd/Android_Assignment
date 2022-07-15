@@ -121,6 +121,7 @@ public class FileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             contextMenu.setHeaderTitle("Chọn hành động:");
             contextMenu.add(0, view.getId(), 0, "Đổi tên");
             contextMenu.add(0, view.getId(), 0, "Sao chép");
+            contextMenu.add(0, view.getId(), 0, "Di chuyển");
             contextMenu.add(0, view.getId(), 0, "Xoá");
         }
 

@@ -1,5 +1,7 @@
 package me.hanhngo.myfilemanager;
 
+import android.util.Log;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +26,7 @@ public class Utils {
             return FileType.DIRECTORY;
         }
         String extension;
-        int index = file.getName().lastIndexOf("\\.");
+        int index = file.getName().lastIndexOf(".");
         if (index > 0) {
             extension = file.getName().substring(index + 1);
         } else {
