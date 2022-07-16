@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -21,6 +23,7 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
@@ -137,6 +140,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             builder.setPositiveButton("OK", (dialog, which) -> {
                 newName.append(input.getText().toString());
                 renameFile(fileModel, newName.toString());
+                setFileList(storageRootPath);
             });
             builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
             builder.show();
@@ -148,6 +152,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             builder.setPositiveButton("OK", (dialog, which) -> {
                 File toDelete = new File(fileModel.getAbsolutePath());
                 toDelete.delete();
+                setFileList(storageRootPath);
             });
             builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
             builder.show();
@@ -202,9 +207,27 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         setFileList(storageRootPath);
     }
 
+    public void createTextFile(String name, String body) {
+        try {
+            File txtFile = new File(name);
+            FileWriter writer = new FileWriter(txtFile);
+            writer.append(body);
+            writer.flush();
+            writer.close();
+            setFileList(storageRootPath);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void openFile(FileModel fileModel) {
+        if (fileModel.getType() == null) {
+            return;
+        }
+
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
+
         if (fileModel.getType() == FileType.IMAGE) {
             intent.setDataAndType(
                     FileProvider.getUriForFile(getApplicationContext(),
@@ -212,8 +235,19 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                             new File(fileModel.getAbsolutePath())), "image/*"
             );
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            startActivity(intent);
         }
+
+        if (fileModel.getType() == FileType.TEXT) {
+            intent.setDataAndType(
+                    FileProvider.getUriForFile(getApplicationContext(),
+                            BuildConfig.APPLICATION_ID + ".provider",
+                            new File(fileModel.getAbsolutePath())), "text/plain"
+            );
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        }
+
+        startActivity(Intent.createChooser(intent, "Select chooser"));
+
     }
 
     @Override
@@ -263,8 +297,31 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             }
             return true;
         }
+        if (item.getItemId() == R.id.create_file) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Tạo file");
+            TextView inputNameLabel = new TextView(this);
+            inputNameLabel.setText("Tên file");
+            final EditText inputName = new EditText(this);
+            TextView inputBodyLabel = new TextView(this);
+            inputBodyLabel.setText("Nội dung");
+            final EditText inputBody = new EditText(this);
+            inputName.setInputType(InputType.TYPE_CLASS_TEXT);
+            inputBody.setInputType(InputType.TYPE_CLASS_TEXT);
+            final LinearLayout layout = new LinearLayout(this);
+            layout.setOrientation(LinearLayout.VERTICAL);
+            layout.addView(inputNameLabel);
+            layout.addView(inputName);
+            layout.addView(inputBodyLabel);
+            layout.addView(inputBody);
+            builder.setView(layout);
+            builder.setPositiveButton("OK", (dialog, which) -> {
+                createTextFile(storageRootPath + "/" + inputName.getText().toString() + ".txt", inputBody.getText().toString());
+            });
+            builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
+            builder.show();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }
-
-
