@@ -63,6 +63,8 @@ public class StudentDetailActivity extends AppCompatActivity {
             builder.setTitle("Xác nhận xoá");
             builder.setPositiveButton("OK", (dialog, which) -> {
                 DBUtil.delete(db, new StudentModel(studentId, fullName, email, dob));
+                Intent intent = new Intent(StudentDetailActivity.this, MainActivity.class);
+                startActivity(intent);
             });
             builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
             builder.show();
