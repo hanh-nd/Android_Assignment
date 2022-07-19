@@ -24,17 +24,5 @@
             android:layout_height="wrap_content"
             tools:text="ngo" />
 
-        <TextView
-            android:id="@+id/student_email_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="ngo@gmail.com" />
-
-        <TextView
-            android:id="@+id/student_dob_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="12/12/2012" />
-
     </LinearLayout>
 </layout>

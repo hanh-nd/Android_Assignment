@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Student ID (*)" />
+
+            <TextView
+                android:id="@+id/student_id_tv"
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="20101" />
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name (*)" />
+
+            <EditText
+                android:id="@+id/student_full_name_et"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your name"
+                android:inputType="text" />
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email (*)" />
+
+            <EditText
+                android:id="@+id/student_email_et"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your email"
+                android:inputType="text" />
+
+            <TextView
+                style="@style/text_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date of Birth (*)" />
+
+            <EditText
+                android:id="@+id/student_dob_et"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your date of birth"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/submit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:enabled="false"
+                android:text="Submit" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

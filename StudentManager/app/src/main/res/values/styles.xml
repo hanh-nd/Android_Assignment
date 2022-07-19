@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="text_label_style">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="edit_text_style">
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+</resources>

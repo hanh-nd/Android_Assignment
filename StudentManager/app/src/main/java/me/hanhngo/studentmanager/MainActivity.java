@@ -1,7 +1,9 @@
 package me.hanhngo.studentmanager;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +11,7 @@ import java.util.ArrayList;
 
 import me.hanhngo.studentmanager.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnClickListener {
     private ActivityMainBinding binding = null;
 
     SQLiteDatabase db;
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 //        createTable();
 
         ArrayList<StudentModel> studentModelArrayList = DBUtil.selectAll(db);
-        StudentAdapter adapter = new StudentAdapter(studentModelArrayList);
+        StudentAdapter adapter = new StudentAdapter(studentModelArrayList, this);
         binding.studentRcv.setAdapter(adapter);
     }
 
@@ -59,5 +61,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         db.close();
         super.onDestroy();
+    }
+
+    @Override
+    public void onItemClick(StudentModel studentModel) {
+        Intent intent = new Intent(MainActivity.this, StudentDetailActivity.class);
+        Bundle b = new Bundle();
+        b.putInt("id", studentModel.getStudentID());
+        b.putString("fullName", studentModel.getFullName());
+        b.putString("email", studentModel.getEmail());
+        b.putString("dob", studentModel.getDob());
+        intent.putExtras(b);
+        startActivity(intent);
     }
 }

@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/StudentManager/app/src/main/res/layout/activity_main.xml" value="0.12395833333333334" />
+        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/StudentManager/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/StudentManager/app/src/main/res/layout/activity_student_detail.xml" value="0.2640625" />
+        <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/StudentManager/app/src/main/res/layout/activity_student_edit.xml" value="0.2640625" />
         <entry key="..\:/Users/hanhn/Desktop/hanh/Slides/20212/Android/Slides/Assignment/StudentManager/app/src/main/res/layout/student_row_item.xml" value="0.2640625" />
       </map>
     </option>
