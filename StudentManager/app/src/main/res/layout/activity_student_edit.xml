@@ -23,9 +23,9 @@
                 android:layout_height="wrap_content"
                 android:text="Student ID (*)" />
 
-            <TextView
-                android:id="@+id/student_id_tv"
-                style="@style/text_label_style"
+            <EditText
+                android:id="@+id/student_id_et"
+                style="@style/edit_text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="20101" />
@@ -77,7 +77,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:enabled="false"
                 android:text="Submit" />
 
 

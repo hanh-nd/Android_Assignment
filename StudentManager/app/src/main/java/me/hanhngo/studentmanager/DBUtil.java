@@ -3,6 +3,7 @@ package me.hanhngo.studentmanager;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +48,7 @@ public class DBUtil {
             cv.put("full_name", studentModel.getFullName());
             cv.put("email", studentModel.getEmail());
             cv.put("dob", studentModel.getDob());
-            db.update("tbStudent", cv, "student_id = ?", new String[]{String.valueOf(studentModel.getStudentID())});
+            db.update("tbStudent", cv, "student_id=?",  new String[]{String.valueOf(studentModel.getStudentID())});
             db.setTransactionSuccessful();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -59,7 +60,7 @@ public class DBUtil {
     public static void delete(SQLiteDatabase db, StudentModel studentModel) {
         db.beginTransaction();
         try {
-            db.delete("tbStudent", "student_id = ?", new String[]{String.valueOf(studentModel.getStudentID())});
+            db.delete("tbStudent", "student_id=?", new String[]{String.valueOf(studentModel.getStudentID())});
             db.setTransactionSuccessful();
         } catch (Exception ex) {
             ex.printStackTrace();

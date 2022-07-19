@@ -1,8 +1,10 @@
 package me.hanhngo.studentmanager;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import me.hanhngo.studentmanager.databinding.ActivityMainBinding;
@@ -10,6 +12,8 @@ import me.hanhngo.studentmanager.databinding.ActivityStudentDetailBinding;
 
 public class StudentDetailActivity extends AppCompatActivity {
     private ActivityStudentDetailBinding binding = null;
+
+    SQLiteDatabase db;
 
     int studentId = 0;
     String fullName = "";
@@ -21,6 +25,14 @@ public class StudentDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityStudentDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        // Open DB
+        String path = getFilesDir() + "/mydb";
+        try {
+            db = SQLiteDatabase.openDatabase(path, null, SQLiteDatabase.CREATE_IF_NECESSARY);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
         Bundle b = getIntent().getExtras();
         if(b != null) {
@@ -44,6 +56,16 @@ public class StudentDetailActivity extends AppCompatActivity {
             b1.putString("dob", dob);
             intent.putExtras(b1);
             startActivity(intent);
+        });
+
+        binding.deleteBtn.setOnClickListener(view -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Xác nhận xoá");
+            builder.setPositiveButton("OK", (dialog, which) -> {
+                DBUtil.delete(db, new StudentModel(studentId, fullName, email, dob));
+            });
+            builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
+            builder.show();
         });
     }
 }
